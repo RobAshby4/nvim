@@ -14,11 +14,10 @@ require('lualine').setup {
     }
 }
 
-require("transparent").setup({ enable = true })
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the four listed parsers should always be installed)
-  ensure_installed = { "c", "cpp", "python", "lua", "vim", "help" },
+  ensure_installed = { "c", "cpp", "python", "lua", "vim"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -39,9 +38,10 @@ require'nvim-treesitter.configs'.setup {
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>lg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>man', builtin.man_pages, {})
-
+vim.keymap.set('n', '<leader>l', "$", {})
+vim.keymap.set('n', '<leader>h', "^", {})
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
@@ -65,10 +65,6 @@ return require('packer').startup(function(use)
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     use 'xiyaowong/nvim-transparent'
-        use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'

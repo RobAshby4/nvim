@@ -3,8 +3,31 @@ vim.cmd [[packadd packer.nvim]]
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
-
+vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+
+
+-- cocnvim config
+local keyset = vim.keymap.set
+function _G.check_back_space()
+    local col = vim.fn.col('.') - 1
+    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+end
+
+local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<Tab>\<c-r>=coc#on_enter()\<CR>"]], opts)
+keyset("i", "<S-TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+
+-- Use <c-space> to trigger completion
+keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
+keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
+keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
+keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
+keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
+keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+
+
 require("nvim-tree").setup()
 
 require('lualine').setup {
@@ -34,6 +57,9 @@ require'nvim-treesitter.configs'.setup {
 
     additional_vim_regex_highlighting = false,
   },
+  --  indent = {
+  --    enable = false
+  --  }
 }
 
 local builtin = require('telescope.builtin')
@@ -42,6 +68,9 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>man', builtin.man_pages, {})
 vim.keymap.set('n', '<leader>l', "$", {})
 vim.keymap.set('n', '<leader>h', "^", {})
+vim.keymap.set('n', 'v<leader>l', "v$", {})
+vim.keymap.set('n', 'v<leader>h', "v^", {})
+
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
@@ -51,7 +80,6 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'rafi/awesome-vim-colorschemes'
-    use 'jiangmiao/auto-pairs'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
     -- or                            , branch = '0.1.x',
@@ -68,6 +96,10 @@ return require('packer').startup(function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
     }
 
 end)

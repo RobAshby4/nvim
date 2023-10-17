@@ -11,7 +11,8 @@ set splitright
 
 " load lua
 lua require("plugins")
-lua require("lualine").setup()
+lua require("plugconf")
+"lua require("lualine").setup()
 
 colorscheme alduin
 

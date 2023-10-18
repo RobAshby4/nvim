@@ -60,6 +60,8 @@ require'nvim-treesitter.configs'.setup {
   --  }
 }
 
+require('gitsigns').setup()
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>g', builtin.live_grep, {})

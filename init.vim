@@ -8,6 +8,7 @@ set showmatch
 set wildmode=longest,list
 set splitbelow
 set splitright
+set scrolloff =6
 
 " load lua
 lua require("plugins")

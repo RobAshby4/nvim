@@ -2,6 +2,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 vim.wo.relativenumber = true
+vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 
@@ -71,4 +72,11 @@ vim.keymap.set('n', '<leader>l', "$", {})
 vim.keymap.set('n', '<leader>h', "^", {})
 vim.keymap.set('n', 'v<leader>l', "v$", {})
 vim.keymap.set('n', 'v<leader>h', "v^", {})
+vim.keymap.set('n', '<leader>cd', ":CocDisable<cr>", {})
+vim.keymap.set('n', '<leader>ce', ":CocEnable<cr>", {})
+
+vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
+vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
+vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
+vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
 

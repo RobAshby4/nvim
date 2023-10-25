@@ -31,5 +31,12 @@ return require('packer').startup(function(use)
     }
 
     use 'lewis6991/gitsigns.nvim'
+    use({
+        "gbprod/substitute.nvim",
+        config = function()
+        require("substitute").setup({
+    })
+  end
+})
 
 end)

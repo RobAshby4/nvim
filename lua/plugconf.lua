@@ -1,6 +1,8 @@
+-- vim opts
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
+vim.opt.ignorecase = true
 vim.wo.relativenumber = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
@@ -26,7 +28,7 @@ keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
-
+-- end cocnvim config
 
 require("nvim-tree").setup()
 
@@ -36,7 +38,6 @@ require('lualine').setup {
 	theme = auto
     }
 }
-
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the four listed parsers should always be installed)
@@ -64,19 +65,26 @@ require'nvim-treesitter.configs'.setup {
 
 require('gitsigns').setup()
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>man', builtin.man_pages, {})
+-- navigation keybinds
 vim.keymap.set('n', '<leader>l', "$", {})
 vim.keymap.set('n', '<leader>h', "^", {})
 vim.keymap.set('n', 'v<leader>l', "v$", {})
 vim.keymap.set('n', 'v<leader>h', "v^", {})
+
+-- coc disable/enable keymap
 vim.keymap.set('n', '<leader>cd', ":CocDisable<cr>", {})
 vim.keymap.set('n', '<leader>ce', ":CocEnable<cr>", {})
 
-vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
-vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
-vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
-vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
+-- telescope keymaps
+local telebuiltin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telebuiltin.find_files, {})
+vim.keymap.set('n', '<leader>g', telebuiltin.live_grep, {})
+vim.keymap.set('n', '<leader>man', telebuiltin.man_pages, {})
+
+-- substitute keymaps
+local sub = require('substitute')
+vim.keymap.set("n", "s", sub.operator, { noremap = true })
+vim.keymap.set("n", "ss", sub.line, { noremap = true })
+vim.keymap.set("n", "S", sub.eol, { noremap = true })
+vim.keymap.set("x", "s", sub.visual, { noremap = true })
 

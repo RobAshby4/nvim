@@ -66,10 +66,13 @@ require'nvim-treesitter.configs'.setup {
 require('gitsigns').setup()
 
 -- navigation keybinds
-vim.keymap.set('n', '<leader>l', "$", {})
-vim.keymap.set('n', '<leader>h', "^", {})
-vim.keymap.set('n', 'v<leader>l', "v$", {})
-vim.keymap.set('n', 'v<leader>h', "v^", {})
+vim.keymap.set('n', '<leader>l', '$', {})
+vim.keymap.set('n', '<leader>h', '^', {})
+vim.keymap.set('n', 'v<leader>l', 'v$', {})
+vim.keymap.set('n', 'v<leader>h', 'v^', {})
+
+-- search highlight clear keybinds
+vim.keymap.set('n', '<leader><Tab>', ':let @/=""<cr>', {})
 
 -- coc disable/enable keymap
 vim.keymap.set('n', '<leader>cd', ":CocDisable<cr>", {})
@@ -83,8 +86,8 @@ vim.keymap.set('n', '<leader>man', telebuiltin.man_pages, {})
 
 -- substitute keymaps
 local sub = require('substitute')
-vim.keymap.set("n", "s", sub.operator, { noremap = true })
-vim.keymap.set("n", "ss", sub.line, { noremap = true })
-vim.keymap.set("n", "S", sub.eol, { noremap = true })
-vim.keymap.set("x", "s", sub.visual, { noremap = true })
+vim.keymap.set('n', 's', sub.operator, { noremap = true })
+vim.keymap.set('n', 'ss', sub.line, { noremap = true })
+vim.keymap.set('n', 'S', sub.eol, { noremap = true })
+vim.keymap.set('x', 's', sub.visual, { noremap = true })
 

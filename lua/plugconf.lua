@@ -2,6 +2,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
+vim.g.minimap_auto_start = 1
 vim.opt.ignorecase = true
 vim.wo.relativenumber = true
 vim.opt.colorcolumn = "80"

@@ -34,9 +34,10 @@ return require('packer').startup(function(use)
     use({
         "gbprod/substitute.nvim",
         config = function()
-        require("substitute").setup({
+            require("substitute").setup({
+            })
+        end
     })
-  end
-})
+    use 'wfxr/minimap.vim'
 
 end)

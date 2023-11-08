@@ -12,8 +12,7 @@ set scrolloff =6
 
 " load lua
 lua require("plugins")
-lua require("plugconf")
-"lua require("lualine").setup()
+lua require("config")
 
 colorscheme alduin
 

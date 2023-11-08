@@ -66,6 +66,8 @@ require'nvim-treesitter.configs'.setup {
 
 require('gitsigns').setup()
 
+require('neoscroll').setup()
+require("harpoon").setup()
 -- navigation keybinds
 vim.keymap.set('n', '<leader>l', '$', {})
 vim.keymap.set('n', '<leader>h', '^', {})
@@ -91,4 +93,11 @@ vim.keymap.set('n', 's', sub.operator, { noremap = true })
 vim.keymap.set('n', 'ss', sub.line, { noremap = true })
 vim.keymap.set('n', 'S', sub.eol, { noremap = true })
 vim.keymap.set('x', 's', sub.visual, { noremap = true })
+
+-- harpoon keymaps 
+vim.keymap.set('n', '<leader>a', require("harpoon.mark").add_file, {})
+vim.keymap.set('n', '<leader>n', require("harpoon.ui").nav_next, {})
+vim.keymap.set('n', '<leader>p', require("harpoon.ui").nav_prev, {})
+vim.keymap.set('n', '<leader>H', require("harpoon.ui").toggle_quick_menu, {})
+vim.keymap.set('n', '<leader>$', require("harpoon.term").gotoTerminal, {})
 

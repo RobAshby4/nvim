@@ -39,5 +39,7 @@ return require('packer').startup(function(use)
         end
     })
     use 'wfxr/minimap.vim'
-
+    use 'karb94/neoscroll.nvim'
+    use 'nvim-lua/plenary.nvim' 
+    use 'ThePrimeagen/harpoon'
 end)

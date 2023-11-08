@@ -2,7 +2,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
-vim.g.minimap_auto_start = 1
 vim.opt.ignorecase = true
 vim.wo.relativenumber = true
 vim.opt.colorcolumn = "80"
@@ -68,6 +67,7 @@ require('gitsigns').setup()
 
 require('neoscroll').setup()
 require("harpoon").setup()
+
 -- navigation keybinds
 vim.keymap.set('n', '<leader>l', '$', {})
 vim.keymap.set('n', '<leader>h', '^', {})
@@ -101,3 +101,5 @@ vim.keymap.set('n', '<leader>p', require("harpoon.ui").nav_prev, {})
 vim.keymap.set('n', '<leader>H', require("harpoon.ui").toggle_quick_menu, {})
 vim.keymap.set('n', '<leader>$', require("harpoon.term").gotoTerminal, {})
 
+-- tree toggle keybinds
+vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>', {})

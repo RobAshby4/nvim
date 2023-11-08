@@ -16,6 +16,3 @@ lua require("config")
 
 colorscheme alduin
 
-map <C-c> I// <ESC>
-map <leader>t :NvimTreeToggle <CR>
-

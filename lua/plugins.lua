@@ -26,9 +26,11 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
+         "windwp/nvim-autopairs",
+         config = function() require("nvim-autopairs").setup {
+             disable_filetypes = { "TelescopePrompt", "vim", "clojure" }
+         } end
+     }
 
     use 'lewis6991/gitsigns.nvim'
     use({
@@ -41,4 +43,11 @@ return require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
     use 'nvim-lua/plenary.nvim' 
     use 'ThePrimeagen/harpoon'
+    use 'nanotech/jellybeans.vim'
+    use 'scottymoon/vim-twilight'
+    use 'vim-scripts/buttercream.vim'
+    use 'vim-scripts/wood.vim'
+    use 'vim-scripts/synic.vim'
+    use 'DryLabRebel/Squire'
+    use 'mikesmithgh/gruvsquirrel.nvim'
 end)

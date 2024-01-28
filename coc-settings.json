@@ -1,0 +1,15 @@
+{
+    "languageserver": {
+        "clj": {
+            "command": "clojure-lsp",
+            "rootPatterns": ["main.clj"],
+            "trace.server": "verbose",
+            "filetypes": ["clojure"]
+        },
+        "fortran": {
+            "command": "fortls",
+            "filetypes": ["fortran"],
+            "rootPatterns": [".fortls", ".git/"],
+        }
+    }
+}

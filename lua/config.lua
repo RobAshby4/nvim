@@ -28,9 +28,10 @@ keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+-- Coc explorer
+keyset("n", "<leader>t", "<Cmd>CocCommand explorer<CR>", {silent = true})
 -- end cocnvim config
 
-require("nvim-tree").setup()
 
 require('lualine').setup {
     options = {
@@ -102,5 +103,3 @@ vim.keymap.set('n', '<leader>p', require("harpoon.ui").nav_prev, {})
 vim.keymap.set('n', '<leader>H', require("harpoon.ui").toggle_quick_menu, {})
 vim.keymap.set('n', '<leader>$', require("harpoon.term").gotoTerminal, {})
 
--- tree toggle keybinds
-vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>', {})

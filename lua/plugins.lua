@@ -13,13 +13,6 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
     use 'xiyaowong/nvim-transparent'
     use {
         'nvim-treesitter/nvim-treesitter',

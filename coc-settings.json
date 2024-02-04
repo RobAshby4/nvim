@@ -1,15 +1,27 @@
 {
-    "languageserver": {
-        "clj": {
-            "command": "clojure-lsp",
-            "rootPatterns": ["main.clj"],
-            "trace.server": "verbose",
-            "filetypes": ["clojure"]
-        },
-        "fortran": {
-            "command": "fortls",
-            "filetypes": ["fortran"],
-            "rootPatterns": [".fortls", ".git/"],
-        }
+  "languageserver": {
+    "clj": {
+      "command": "clojure-lsp",
+      "rootPatterns": ["main.clj"],
+      "trace.server": "verbose",
+      "filetypes": ["clojure"]
+    },
+    "fortran": {
+      "command": "fortls",
+      "filetypes": ["fortran"],
+      "rootPatterns": [".fortls", ".git/"]
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+      "filetypes": ["haskell", "lhaskell"]
+    },
+    "tailwindcss": {
+      "command": "tailwindcss-language-server",
+      "args": ["--stdio"],
+      "rootPatterns": ["taiwind.config.js"],
+      "filetypes": ["css", "tailwindcss"]
     }
+  }
 }

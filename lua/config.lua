@@ -8,6 +8,9 @@ vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 
+-- allow switching to two or four space tabs on the fly
+vim.keymap.set("n", "<leader>2", ":set tabstop =2<cr>:set softtabstop =2<cr>:set shiftwidth =2<cr>", {})
+vim.keymap.set("n", "<leader>4", ":set tabstop =4<cr>:set softtabstop =4<cr>:set shiftwidth =4<cr>", {})
 
 -- cocnvim config
 local keyset = vim.keymap.set
@@ -21,7 +24,7 @@ keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<Tab>\<c
 keyset("i", "<S-TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 
 -- Use <c-space> to trigger completion
-keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
+keyset("i", "<C-space>", "coc#refresh()", {silent = true, expr = true})
 keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
 keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})

@@ -23,5 +23,9 @@
       "rootPatterns": ["taiwind.config.js"],
       "filetypes": ["css", "tailwindcss"]
     }
-  }
+  },
+  "coc.source.vimtex.filetypes": [
+    "tex",
+    "plaintex"
+  ]
 }

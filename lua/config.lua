@@ -12,6 +12,10 @@ vim.opt.termguicolors = true
 vim.keymap.set("n", "<leader>2", ":set tabstop =2<cr>:set softtabstop =2<cr>:set shiftwidth =2<cr>", {})
 vim.keymap.set("n", "<leader>4", ":set tabstop =4<cr>:set softtabstop =4<cr>:set shiftwidth =4<cr>", {})
 
+-- enable spellcheck
+vim.keymap.set("n", "<leader>se", ":setlocal spell spelllang=en_us<cr>", {})
+vim.keymap.set("n", "<leader>sd", ":set nospell<cr>", {})
+
 -- cocnvim config
 local keyset = vim.keymap.set
 function _G.check_back_space()
@@ -76,8 +80,8 @@ require("harpoon").setup()
 -- navigation keybinds
 vim.keymap.set('n', '<leader>l', '$', {})
 vim.keymap.set('n', '<leader>h', '^', {})
-vim.keymap.set('n', 'v<leader>l', 'v$', {})
-vim.keymap.set('n', 'v<leader>h', 'v^', {})
+vim.keymap.set('v', '<leader>l', '$', {})
+vim.keymap.set('v', '<leader>h', '^', {})
 
 -- search highlight clear keybinds
 vim.keymap.set('n', '<leader><Tab>', ':let @/=""<cr>', {})

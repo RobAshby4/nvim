@@ -43,7 +43,7 @@ keyset("n", "<leader>t", "<Cmd>CocCommand explorer<CR>", {silent = true})
 require('lualine').setup {
     options = {
 	icons_enabled = true,
-	theme = auto
+	theme = 'codedark' 
     }
 }
 

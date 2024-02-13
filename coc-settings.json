@@ -17,11 +17,10 @@
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
       "filetypes": ["haskell", "lhaskell"]
     },
-    "tailwindcss": {
-      "command": "tailwindcss-language-server",
-      "args": ["--stdio"],
-      "rootPatterns": ["taiwind.config.js"],
-      "filetypes": ["css", "tailwindcss"]
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
     }
   }
 }

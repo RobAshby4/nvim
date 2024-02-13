@@ -43,4 +43,5 @@ return require('packer').startup(function(use)
     use 'vim-scripts/synic.vim'
     use 'DryLabRebel/Squire'
     use 'mikesmithgh/gruvsquirrel.nvim'
+    use 'chriskempson/base16-vim'
 end)

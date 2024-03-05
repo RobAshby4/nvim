@@ -44,4 +44,8 @@ return require('packer').startup(function(use)
     use 'DryLabRebel/Squire'
     use 'mikesmithgh/gruvsquirrel.nvim'
     use 'chriskempson/base16-vim'
+    use 'Olical/conjure'
+    use 'tpope/vim-dispatch'
+    use 'clojure-vim/vim-jack-in'
+    use 'radenling/vim-dispatch-neovim'   
 end)

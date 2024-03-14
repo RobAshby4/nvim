@@ -4,8 +4,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.opt.ignorecase = true
-vim.wo.relativenumber = true
-vim.opt.colorcolumn = "80"
+-- vim.wo.relativenumber = true
+-- vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 

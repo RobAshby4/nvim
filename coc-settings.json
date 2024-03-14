@@ -21,6 +21,10 @@
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
+    },
+    "gleam": {
+      "command": "gleam lsp",
+      "filetypes": ["gleam"]
     }
   }
 }

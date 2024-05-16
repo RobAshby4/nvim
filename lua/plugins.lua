@@ -52,4 +52,5 @@ return require('packer').startup(function(use)
     use 'gleam-lang/gleam.vim'
     use 'robertmeta/nofrils'
     use 'plan9-for-vimspace/acme-colors'
+    use 'github/copilot.vim'
 end)

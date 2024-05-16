@@ -26,6 +26,11 @@
     "gleam": {
       "command": "gleam lsp",
       "filetypes": ["gleam"]
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".git/", ".hg/"]
     }
   }
 }

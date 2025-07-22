@@ -11,6 +11,15 @@ vim.keymap.set('v', '<leader>h', '^', {})
 -- clear search selection 
 vim.keymap.set('n', '<leader><Tab>', ':let @/=""<cr>', {})
 
--- enable and disable lsp
+-- enter explorer
+vim.keymap.set('n', '<leader>E', ":Explore<cr>", {})
+
+-- lsp settings
 vim.keymap.set('n', '<leader>nld', ":LspStop<cr>", {})
 vim.keymap.set('n', '<leader>nle', ":LspStart<cr>", {})
+vim.keymap.set('n', '<leader>d', function() vim.diagnostic.open_float(); end, {})
+
+-- copilot
+vim.keymap.set('n', '<leader>ce', ":Copilot enable<cr>", {})
+vim.keymap.set('n', '<leader>cd', ":Copilot disable<cr>", {})
+

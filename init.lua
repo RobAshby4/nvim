@@ -7,6 +7,7 @@ require("config.lsp_config")
 require("config.lsp.clangd")
 require("config.lsp.luals")
 require("config.lsp.rust_analyzer")
+require("config.lsp.ts_ls")
 
 -- nvim settings 
 vim.opt.number = true

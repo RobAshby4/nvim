@@ -13,6 +13,12 @@ return {
   { -- optional cmp completion source for require statements and module annotations
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
+      local cmp = require("cmp")
+      cmp.visible_docs()
+      mapping = cmp.mapping.preset.insert({
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      })
       opts.sources = opts.sources or {}
       table.insert(opts.sources, {
         name = "lazydev",
